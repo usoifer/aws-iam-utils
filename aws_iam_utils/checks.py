@@ -7,7 +7,7 @@ from aws_iam_utils.util import extract_policy_permission_items
 from aws_iam_utils.util import get_action_data_with_overrides
 
 
-def policies_are_equal(p1: dict, p2: dict) -> bool:
+def policies_are_equal(p1, p2) -> bool:
     """
     Checks whether two policies give the same permissions. This will expand
     all wildcards and Resource constraints and then compare the result.
@@ -25,7 +25,7 @@ def policies_are_equal(p1: dict, p2: dict) -> bool:
     ) == extract_policy_permission_items(expand_policy(p2))
 
 
-def policy_has_only_these_access_levels(p: dict, access_levels: list[str]) -> bool:
+def policy_has_only_these_access_levels(p, access_levels) -> bool:
     """
     Returns True if all actions granted under the given policy are Read or
     List actions.
@@ -74,7 +74,7 @@ def is_read_write_policy(p: dict) -> bool:
 
 
 def policy_has_only_these_arn_types(
-    p: dict, service_name: str, arn_types: list[str]
+    p, service_name, arn_types
 ) -> bool:
     """
     Returns True if all actions granted under the given policy relate to the

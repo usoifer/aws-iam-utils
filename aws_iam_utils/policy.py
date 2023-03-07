@@ -10,7 +10,7 @@ def policy_from_dict(policy):
 
 
 class Policy:
-    def __init__(self, version: str, ppis: list[PolicyPermissionItem]):
+    def __init__(self, version: str, ppis):
         self.version = version
         self.ppis = ppis
 

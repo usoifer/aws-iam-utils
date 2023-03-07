@@ -79,9 +79,9 @@ def generate_full_policy_for_service(*service_name: str) -> dict:
 
 
 def generate_policy_for_service_arn_type(
-    service_name: str,
-    arn_type: str,
-    reqd_access_levels: list[str],
+    service_name,
+    arn_type,
+    reqd_access_levels,
     include_service_wide_actions: bool = False,
 ) -> dict:
     """
@@ -123,7 +123,7 @@ def generate_policy_for_service_arn_type(
 
 
 def generate_policy_for_service(
-    service_name: str, reqd_access_levels: list[str], use_wildcard_verbs: bool = True
+    service_name, reqd_access_levels, use_wildcard_verbs = True
 ) -> dict:
     """
     Generates an IAM policy that grants the given level of access to all of the given
@@ -147,9 +147,9 @@ def generate_policy_for_service(
 
 
 def __generate_and_validate_policy_from_actions(
-    service_actions: list[str],
+    service_actions,
     service_name: str,
-    reqd_access_levels: list[str],
+    reqd_access_levels,
     use_wildcard_verbs: bool,
 ) -> dict:
     matching_actions = []

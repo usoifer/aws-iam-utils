@@ -9,7 +9,7 @@ def create_policy(*statements: dict, version: str = "2012-10-17") -> dict:
 
 def statement(
     effect: str = "Allow",
-    actions: list[str] = [],
+    actions = [],
     resource: str = None,
     condition: dict = None,
     principal: dict = None,
